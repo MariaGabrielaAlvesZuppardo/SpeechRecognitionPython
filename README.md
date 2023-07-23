@@ -14,6 +14,7 @@ Este programa utiliza a biblioteca SpeechRecognition para realizar a conversão 
 
 ## Pré-requisitos
 
+- Instale o Flask
 - Python 3.x
 - Biblioteca SpeechRecognition
 - Biblioteca tkinter (para a interface gráfica)
