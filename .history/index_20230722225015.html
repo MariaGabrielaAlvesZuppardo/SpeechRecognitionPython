@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversor de fala em texto</title>
+</head>
+<body>
+    <div>
+        <h1>Conversor de fala em texto</h1>
+        <div>
+            <label>Texto falado:</label>
+            <p id="texto_falado"></p>
+        </div>
+        <div>
+            <button id="abrir_microfone_button" onclick="abrirMicrofone()">Abrir Microfone</button>
+        </div>
+    </div>
+
+    <script>
+        function abrirMicrofone() {
+            fetch('/abrir_microfone_callback', { method: 'POST' })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("texto_falado").innerText = "Texto falado: " + data;
+            })
+            .catch(error => console.log(error));
+        }
+    </script>
+</body>
+</html>
+
